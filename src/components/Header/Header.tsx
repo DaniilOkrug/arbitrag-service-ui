@@ -12,10 +12,10 @@ const Header: FC<HeaderProps> = ({ cases }) => {
 
   useEffect(() => {
     const date = new Date();
-    setTime(date.getHours() + ":" + date.getMinutes());
+    setTime(date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()));
     setInterval(() => {
       const date = new Date();
-      setTime(date.getHours() + ":" + date.getMinutes());
+      setTime(date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()));
     });
   }, []);
 
@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = ({ cases }) => {
     <div className="header">
       <div className="title-container">
         <BinanceIcon />
-        <p>Binance – P2P</p>
+        <p>Binance</p>
       </div>
 
       <p className="time">{time}</p>

@@ -73,7 +73,7 @@ const Record: FC<RecordProps> = ({
       <td className="coin">{coinFrom !== coinTo ? coinIcons[coinTo] : ''}</td>
       <td className="align-left">{bankNames[methodTo]}</td>
       <td className="align-left">{priceTo}</td>
-      <td className={+profit < 3 ? 'align-right orange' : 'align-right green'}>{profit}</td>
+      <td className={+profit < 3 ? 'align-right orange' : 'align-right green'}>{profit}%</td>
     </tr>
   );
 };
