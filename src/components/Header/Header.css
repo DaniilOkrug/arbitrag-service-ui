@@ -31,6 +31,14 @@
   justify-content: end;
 }
 
-.title-container, .time, .cases-container {
+.title-container,
+.time,
+.cases-container {
   flex-basis: 33%;
+}
+
+@media (min-width: 576px) {
+  .cases-container {
+    flex-basis: 35%;
+  }
 }

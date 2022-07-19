@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./Header.css";
 
 import BinanceIcon from "../Icons/BinanceIcon";
@@ -8,6 +8,17 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ cases }) => {
+  const [time, setTime] = useState<string>("");
+
+  useEffect(() => {
+    const date = new Date();
+    setTime(date.getHours() + ":" + date.getMinutes());
+    setInterval(() => {
+      const date = new Date();
+      setTime(date.getHours() + ":" + date.getMinutes());
+    });
+  }, []);
+
   return (
     <div className="header">
       <div className="title-container">
@@ -15,7 +26,7 @@ const Header: FC<HeaderProps> = ({ cases }) => {
         <p>Binance – P2P</p>
       </div>
 
-      <p className="time">11:03</p>
+      <p className="time">{time}</p>
 
       <div className="cases-container">
         <p className="cases">{cases.length} связок</p>
