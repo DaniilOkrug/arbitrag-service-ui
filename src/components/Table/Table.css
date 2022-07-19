@@ -1,0 +1,46 @@
+.table-container {
+  padding: 0 12px;
+}
+
+.table-cases {
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.04em;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+.table-cases td,
+th {
+  padding: 0 0px;
+}
+
+.table-cases .align-left {
+  text-align: left;
+}
+
+.table-cases .align-right {
+  text-align: right !important;
+}
+
+.table-cases .coin {
+  padding: 0;
+}
+
+.table-cases_header {
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: 0.01em;
+}
+
+.table-cases_header .profit {
+  color: #85ff92;
+}
+
+.table-cases_header th {
+  height: 22px;
+}

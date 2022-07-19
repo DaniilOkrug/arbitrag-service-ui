@@ -1,0 +1,36 @@
+.header {
+  font-family: "PT Mono-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  max-width: 100%;
+
+  background-color: #000000;
+  padding: 12px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-weight: 700;
+
+  gap: 10px;
+}
+
+.cases-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.title-container, .time, .cases-container {
+  flex-basis: 33%;
+}
