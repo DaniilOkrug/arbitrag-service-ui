@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     document.title = "Арбитраж";
 
-    const socket = io("http://localhost:5000");
+    const socket = io("https://mockupdealer.ru");
 
     socket.on("cases", (data) => {
       console.log(data);
