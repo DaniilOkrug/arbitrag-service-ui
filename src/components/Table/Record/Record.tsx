@@ -66,7 +66,7 @@ const Record: FC<RecordProps> = ({
   profit,
 }) => {
   return (
-    <tr>
+    <tr className="record">
       <td className="align-left">{bankNames[methodFrom]}</td>
       <td className="coin">{coinIcons[coinFrom]}</td>
       <td className="align-left">{priceFrom}</td>

@@ -1,0 +1,45 @@
+.ReactModal__Overlay {
+  background-color: rgba(4, 3, 3, 0.92) !important;
+
+  z-index: 1000;
+}
+
+.ReactModal__Content {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.demo-modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #171717 !important;
+  border-color: #171717 !important;
+  border-radius: 4px !important;
+
+  width: 261px;
+  height: 148px;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  border-bottom: 1.09375px solid #ff2b2b !important;
+}
+
+.demo-text {
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}

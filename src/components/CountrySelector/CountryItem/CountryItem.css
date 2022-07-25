@@ -1,0 +1,13 @@
+.country-item {
+  padding: 8px 6.5px;
+
+  background: #060604;
+  border-radius: 2.1875px 2.1875px 0px 0px;
+  border-bottom: 1.09375px solid #F3BA2F;
+
+  opacity: 0.2;
+}
+
+.country-item.active {
+  opacity: 1;
+}

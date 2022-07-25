@@ -1,0 +1,9 @@
+.country_selector {
+  background: #131217;
+  border-radius: 2px;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}

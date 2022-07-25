@@ -1,4 +1,6 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
+import { useAppSelector } from "../../hooks/redux";
+
 import "./Table.css";
 
 import Record from "./Record/Record";
@@ -7,7 +9,9 @@ interface TableProps {
   cases: any[];
 }
 
-const Table: FC<TableProps> = ({cases}) => {
+const Table: FC<TableProps> = ({ cases }) => {
+  const { activeBanks } = useAppSelector((state) => state.userReducer);
+
   return (
     <div className="table-container">
       <table className="table-cases">
@@ -24,18 +28,27 @@ const Table: FC<TableProps> = ({cases}) => {
         </thead>
         <tbody>
           {cases.length > 0 &&
-            cases.map((element, index) => (
-              <Record
-                key={index}
-                coinFrom={element.buy.asset}
-                coinTo={element.sell.asset}
-                methodFrom={element.buy.payType}
-                methodTo={element.sell.payType}
-                priceFrom={element.buy.price}
-                priceTo={element.sell.price}
-                profit={element.profit}
-              />
-            ))}
+            cases.map((element, index) => {
+              if (
+                activeBanks.includes(element.buy.payType) &&
+                activeBanks.includes(element.sell.payType)
+              ) {
+                return (
+                  <Record
+                    key={index}
+                    coinFrom={element.buy.asset}
+                    coinTo={element.sell.asset}
+                    methodFrom={element.buy.payType}
+                    methodTo={element.sell.payType}
+                    priceFrom={element.buy.price}
+                    priceTo={element.sell.price}
+                    profit={element.profit}
+                  />
+                );
+              } else {
+                return <></>
+              }
+            })}
         </tbody>
       </table>
     </div>

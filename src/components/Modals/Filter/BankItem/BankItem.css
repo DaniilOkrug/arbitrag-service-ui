@@ -1,0 +1,23 @@
+.bank-button {
+  background: #171717;
+  border: 1px solid #414141;
+
+  border-radius: 32px;
+
+  padding: 8px 17px;
+
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+
+  width: fit-content;
+}
+
+.bank-button.active {
+  border: 1px solid #f3ba2f;
+  color: #f3ba2f;
+}

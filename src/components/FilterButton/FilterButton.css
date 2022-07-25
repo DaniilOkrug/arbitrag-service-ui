@@ -1,0 +1,28 @@
+.filter-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+
+  background: #000000;
+  border: 1px solid #222222;
+  border-radius: 52px;
+  vertical-align: middle;
+  padding: 10px;
+  margin-right: 20px;
+
+  color: white;
+
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+@media (min-width: 400px){
+    .filter-button {
+      position:  absolute;
+      right: 12px;
+    }
+  }
