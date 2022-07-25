@@ -9,12 +9,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 
   background: linear-gradient(0deg, #090303, #090303), #000000;
   backdrop-filter: blur(74px);
-
-  gap: 14px;
   z-index: 10;
 
 }
