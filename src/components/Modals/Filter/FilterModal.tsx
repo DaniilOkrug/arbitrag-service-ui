@@ -1,7 +1,11 @@
 import React, { FC, useState } from "react";
 import ReactModal from "react-modal";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { addBank, deleteBank, setBankNames } from "../../../store/reducers/UserSlice";
+import {
+  addBank,
+  deleteBank,
+  setBankNames,
+} from "../../../store/reducers/UserSlice";
 
 import CloseButton from "../CloseButton/CloseButton";
 import BankItem from "./BankItem/BankItem";
@@ -19,7 +23,7 @@ type bankNamesType = {
 
 const bankNames: bankNamesType = {
   Тиньков: "Tinkoff",
-  "Альфа Банк": "RosBank",
+  РосБанк: "RosBank",
   Райф: "RaiffeisenBankRussia",
   Киви: "QIWI",
   Юмани: "YandexMoney",
