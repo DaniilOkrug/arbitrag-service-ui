@@ -1,6 +1,13 @@
 .table-container {
-  padding: 0 12px;
   min-height: auto;
+}
+
+.table-cases_header .first-header-column {
+  padding-left: 12px;
+}
+
+.table-cases_header .last-header-column {
+  padding-right: 12px;
 }
 
 .table-cases {

@@ -18,8 +18,8 @@ interface RecordProps {
 }
 
 type bankNamesType = {
-  [key: string]: string
-}
+  [key: string]: string;
+};
 
 const bankNames: bankNamesType = {
   Tinkoff: "Тиньков",
@@ -45,16 +45,16 @@ const bankNames: bankNamesType = {
 };
 
 type coinIconsType = {
-  [key: string]: JSX.Element
-}
+  [key: string]: JSX.Element;
+};
 
 const coinIcons: coinIconsType = {
   BNB: <BnbIcon />,
   BTC: <BtcIcon />,
   BUSD: <BusdIcon />,
   ETH: <EthIcon />,
-  USDT: <UsdtIcon />
-}
+  USDT: <UsdtIcon />,
+};
 
 const Record: FC<RecordProps> = ({
   coinFrom,
@@ -66,14 +66,22 @@ const Record: FC<RecordProps> = ({
   profit,
 }) => {
   return (
-    <tr className="record">
-      <td className="align-left">{bankNames[methodFrom]}</td>
+    <tr className={+profit < 3 ? "record" : "record record-black"}>
+      <td className="align-left first-column">{bankNames[methodFrom]}</td>
       <td className="coin">{coinIcons[coinFrom]}</td>
       <td className="align-left">{priceFrom}</td>
-      <td className="coin">{coinFrom !== coinTo ? coinIcons[coinTo] : ''}</td>
+      <td className="coin">{coinFrom !== coinTo ? coinIcons[coinTo] : ""}</td>
       <td className="align-left">{bankNames[methodTo]}</td>
       <td className="align-left">{priceTo}</td>
-      <td className={+profit < 3 ? 'align-right orange' : 'align-right green'}>{profit}%</td>
+      <td
+        className={
+          +profit < 3
+            ? "last-column align-right orange"
+            : "last-column align-right green"
+        }
+      >
+        {profit}%
+      </td>
     </tr>
   );
 };

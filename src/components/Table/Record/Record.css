@@ -1,5 +1,23 @@
 .record {
   background-color: #1A1B23;
+  border-bottom: 1px solid rgba(43, 44, 59, 0.9);;
+}
+
+.record td {
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+}
+
+.record-black {
+  background-color: #111116;
+}
+
+.first-column {
+  padding-left: 12px!important;
+}
+
+.last-column {
+  padding-right: 12px!important;
 }
 
 .orange {

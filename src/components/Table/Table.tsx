@@ -17,13 +17,13 @@ const Table: FC<TableProps> = ({ cases }) => {
       <table className="table-cases">
         <thead>
           <tr className="table-cases_header">
-            <th className="align-left">Тейкер</th>
+            <th className="first-header-column align-left">Тейкер</th>
             <th className="coin">Монета</th>
             <th className="align-left">Покупаем</th>
             <th className="coin">Обмен</th>
             <th className="align-left">Продаём</th>
             <th className="align-left">По цене</th>
-            <th className="profit align-right">Профит</th>
+            <th className="last-header-column profit align-right">Профит</th>
           </tr>
         </thead>
         <tbody>
