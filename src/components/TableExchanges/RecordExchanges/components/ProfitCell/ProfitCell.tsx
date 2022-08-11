@@ -47,7 +47,7 @@ const ProfitCell: FC<ProfitCellProps> = ({ profit, name }) => {
               })
             )
           }
-          className="arrow-button"
+          className="arrow-button arrow-button-left"
         >
           <ArrowRight />
         </button>

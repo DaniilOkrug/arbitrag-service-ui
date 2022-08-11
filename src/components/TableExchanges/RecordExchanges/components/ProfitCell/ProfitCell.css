@@ -9,8 +9,10 @@
 
 .button-group {
   display: flex;
+}
 
-  gap: 12px;
+.arrow-button-left {
+  margin-left: 12px;
 }
 
 .arrow-button {
