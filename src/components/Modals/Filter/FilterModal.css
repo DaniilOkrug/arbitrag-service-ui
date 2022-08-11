@@ -1,4 +1,10 @@
-.ReactModal__Overlay {
+.ReactModal__Overlay_filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   background-color: rgba(4, 3, 3, 0.92) !important;
 
   z-index: 1000;
@@ -9,7 +15,10 @@
   border: 0 !important;
 }
 
-.ReactModal__Content:hover, :active, :focus, :target {
+.ReactModal__Content:hover,
+:active,
+:focus,
+:target {
   border: 0 !important;
 }
 

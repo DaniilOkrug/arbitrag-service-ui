@@ -1,0 +1,10 @@
+.table-cases .align-left {
+  padding-left: 12px !important;
+  padding-top: 2px !important;
+  padding-bottom: 4px !important;
+}
+
+.table-exchanges {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}

@@ -1,0 +1,11 @@
+.coin_cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 18px!important;
+  padding-bottom: 18px!important;
+  padding-left: 12px!important;
+
+}

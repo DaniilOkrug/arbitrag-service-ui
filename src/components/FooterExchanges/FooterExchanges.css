@@ -1,0 +1,20 @@
+.footer-exchanges {
+  position: fixed;
+  bottom: 0;
+
+  height: 60px;
+  width: 100%;
+
+  background: linear-gradient(0deg, #090303, #090303), #000000;
+  backdrop-filter: blur(74px);
+
+  font-size: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-yellow {
+  color: #ffe03f;
+}

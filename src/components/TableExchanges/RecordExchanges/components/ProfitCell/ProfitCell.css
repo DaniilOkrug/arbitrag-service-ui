@@ -1,0 +1,33 @@
+.profit_cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+}
+
+.button-group {
+  display: flex;
+
+  gap: 12px;
+}
+
+.arrow-button {
+  background: rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+  border: 0;
+
+  padding: 8px 8px;
+}
+
+.arrow-button:disabled,
+.arrow-button[disabled] {
+  background: rgba(255, 255, 255, 0.19);
+  opacity: 0.4;
+}
+
+.profit {
+  color: #3fff54;
+}

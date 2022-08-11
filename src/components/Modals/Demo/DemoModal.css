@@ -1,7 +1,13 @@
-.ReactModal__Overlay {
+.ReactModal__Overlay_demo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   background-color: rgba(4, 3, 3, 0.92) !important;
 
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .ReactModal__Content {
@@ -17,7 +23,7 @@
   justify-content: center;
 }
 
-.modal-content {
+.demo-modal-content .modal-content {
   background: #171717 !important;
   border-color: #171717 !important;
   border-radius: 4px !important;

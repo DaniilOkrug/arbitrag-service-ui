@@ -13,7 +13,7 @@ interface DemoModalProps {
 
 const DemoModal: FC<DemoModalProps> = ({ show, onClose }) => {
   return (
-    <ReactModal className="demo-modal-content" isOpen={show} ariaHideApp={false}>
+    <ReactModal className="demo-modal-content" overlayClassName="ReactModal__Overlay_demo" isOpen={show} ariaHideApp={false}>
       <div className="modal-content">
         <img src={require("./eyes.png")} alt="" />
         <p className="demo-text">Фильтров нет в Демо</p>

@@ -1,0 +1,48 @@
+.exchange_cell {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding-left: 12px;
+
+  position: relative;
+}
+
+.exchange_cell .price {
+  font-size: 12px;
+}
+
+.exchange_cell .close_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 70px;
+  top: -10px;
+
+  border: 1px solid rgba(40, 40, 40, 0.52);
+  border-radius: 100%;
+
+  width: 10px;
+  height: 10px;
+
+  padding: 2px;
+
+  box-sizing: content-box !important;
+}
+
+.cell_inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.exchange_cell .color-yellow {
+  color: #ffe03f;
+}
+
+.exchange_cell .color-red {
+  color: #ff607d;
+}

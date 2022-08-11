@@ -39,6 +39,7 @@ const FilterModal: FC<FilterModalProps> = ({ show, onClose }) => {
 
   return (
     <ReactModal
+      overlayClassName="ReactModal__Overlay_filter"
       className="main-modal-content"
       isOpen={show}
       ariaHideApp={false}

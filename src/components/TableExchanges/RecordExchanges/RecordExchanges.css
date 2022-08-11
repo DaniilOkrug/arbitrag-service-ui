@@ -1,0 +1,29 @@
+.record_exchanges {
+  background: #000000;
+  backdrop-filter: blur(74px);
+
+  font-size: 10px;
+  /* border-top: 10px solid #1A1B23; */
+}
+
+.record_exchanges.first {
+  border-top: 0;
+}
+
+.color-gray {
+  background: #0a0b10;
+}
+
+.transparent {
+  color: #000000;
+}
+
+.exchange-buy,
+.exchange-sell {
+  width: 90px;
+}
+
+.exchange-buy.active,
+.exchange-sell.active {
+  background: #1C1A29!important;
+}
