@@ -4,8 +4,11 @@
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 18px!important;
-  padding-bottom: 18px!important;
-  padding-left: 12px!important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  padding-left: 12px !important;
+}
 
+.coin_cell .coin-name {
+  margin-bottom: 6px;
 }

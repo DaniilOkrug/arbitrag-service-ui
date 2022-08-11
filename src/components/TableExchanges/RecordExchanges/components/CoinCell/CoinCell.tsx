@@ -37,7 +37,7 @@ const CoinCell: FC<CoinCellProps> = ({ coinName }) => {
 
   return (
     <div className="coin_cell">
-      <p>{coinName}</p>
+      <p className="coin-name">{coinName}</p>
       {availableCoinNames[coinName]}
     </div>
   );

@@ -12,6 +12,7 @@
 
 .exchange_cell .price {
   font-size: 12px;
+  margin-top: 6px;
 }
 
 .exchange_cell .close_button {
