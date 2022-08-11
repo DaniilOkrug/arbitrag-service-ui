@@ -41,7 +41,7 @@ const HeaderExchanges: FC<HeaderProps> = ({ cases }) => {
     <div className="header">
       <div className="title-container-exchanges">
         <UsdtIcon width={14} height={14} />
-        <p>USDT</p>
+        <p className="header-exchanges-coin-title">USDT</p>
       </div>
 
       <p className="time">{time}</p>
