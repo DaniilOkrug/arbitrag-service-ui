@@ -21,7 +21,7 @@ const ExchangeCell: FC<ExchangeCellProps> = ({
     <div className="exchange_cell">
       <p>{exchangeName}</p>
       <p className={first ? "price color-yellow" : " price color-red"}>
-        ${price}
+        $ {price}
       </p>
 
       <div className="close_button">
