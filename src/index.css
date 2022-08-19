@@ -39,3 +39,9 @@ p {
   font-weight: normal;
   src: url(./fonts/PTMono-Regular.woff2) format('woff2'), url(./fonts/PTMono-Regular.woff) format('woff'), url(./fonts/PTMono-Regular.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Ubuntu-Mono-Bold';
+  font-weight: normal;
+  src: url(./fonts/UbuntuMono-Bold.woff2) format('woff2'), url(./fonts/UbuntuMono-Bold.woff) format('woff'), url(./fonts/UbuntuMono-Bold.ttf) format('truetype');
+}

@@ -1,0 +1,48 @@
+.details-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #000000;
+  color: white;
+
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.04em;
+
+  padding-right: 16px;
+}
+
+.details-header .details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.details-header .details-container .banks {
+  height: 100%;
+
+  padding: 13px 11px;
+  margin-right: 22px;
+
+  background: linear-gradient(0deg, #ffe55c, #ffe55c), #494343;
+  color: black;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.04em;
+}
+
+.details-header .profit {
+  color: #3dff96;
+
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+}

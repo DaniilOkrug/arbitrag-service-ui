@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import "./Header.css";
 
-import BinanceIcon from "../Icons/BinanceIcon";
+import BinanceWhiteIcon from "../Icons/BinanceWhiteIcon";
 
 interface HeaderProps {
   cases: any[];
@@ -22,8 +22,8 @@ const Header: FC<HeaderProps> = ({ cases }) => {
   return (
     <div className="header">
       <div className="title-container">
-        <BinanceIcon />
-        <p>Binance</p>
+        <BinanceWhiteIcon />
+        <p>Binance P2P</p>
       </div>
 
       <p className="time">{time}</p>

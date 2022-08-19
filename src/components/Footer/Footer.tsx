@@ -4,6 +4,8 @@ import CountrySelector from "../CountrySelector/CountrySelector";
 import FilterButton from "../FilterButton/FilterButton";
 import DemoModal from "../Modals/Demo/DemoModal";
 import FilterModal from "../Modals/Filter/FilterModal";
+import ReturnButton from "../ReturnButton/ReturnButton";
+import BudgetContainer from "./components/BudgetContainer/BudgetContainer";
 
 import "./Footer.css";
 
@@ -12,9 +14,11 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <CountrySelector />
+      <ReturnButton />
 
       <FilterButton onClick={() => setShow(true)} />
+
+      <BudgetContainer /> 
 
       <FilterModal show={show} onClose={() => setShow(false)} />
     </div>

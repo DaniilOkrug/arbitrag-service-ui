@@ -1,4 +1,4 @@
-.footer {
+.footer-demo {
     height: 60px;
     width: 100%;
     padding: 12px;
@@ -19,7 +19,7 @@
   }
   
   @media (min-width: 400px){
-    .footer {
+    .footer-demo {
       justify-content: center;
     }
   }

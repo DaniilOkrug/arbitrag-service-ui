@@ -1,29 +1,70 @@
 .record {
-  background-color: #1A1B23;
-  border-bottom: 1px solid rgba(43, 44, 59, 0.9);;
+  height: 64px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.record tr {
+  background: #0e090a;
 }
 
 .record td {
-  padding-top: 5px!important;
-  padding-bottom: 5px!important;
+  border: 1px solid #0e090a;
+
+  background: linear-gradient(
+    300.29deg,
+    #1c1c1c 37.17%,
+    rgba(28, 28, 28, 0) 160.33%
+  );
+
+  padding: 10px 12px;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
 }
 
-.record-black {
-  background-color: #111116;
+.record td .coin {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+}
+
+.record td .bankname {
+  opacity: 0.55;
 }
 
 .first-column {
-  padding-left: 12px!important;
+  border-radius: 5px 0 0 5px;
 }
 
 .last-column {
-  padding-right: 12px!important;
-}
+  border-radius: 0 5px 5px 0;
 
-.orange {
-  color: #ffb950;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .green {
   color: #85ff92;
+  margin-top: 7px;
+}
+
+.record .open-case-btn {
+  background: #000000;
+  border-radius: 40px;
+  border: 0;
+  padding: 3px 6px 5px 6px;
 }

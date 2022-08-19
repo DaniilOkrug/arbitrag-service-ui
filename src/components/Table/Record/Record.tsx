@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./Record.css";
 
 import BnbIcon from "../../Icons/BnbIcon";
@@ -6,6 +6,9 @@ import BtcIcon from "../../Icons/BtcIcon";
 import BusdIcon from "../../Icons/BusdIcon";
 import EthIcon from "../../Icons/EthIcon";
 import UsdtIcon from "../../Icons/UsdtIcon";
+import ArrowRightYellow from "../../Icons/ArrowRightYellow";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { goToPage, setActiveCase } from "../../../store/reducers/BudgetSlice";
 
 interface RecordProps {
   methodFrom: string;
@@ -14,7 +17,8 @@ interface RecordProps {
   methodTo: string;
   coinTo: string;
   priceTo: string;
-  profit: string;
+  sellMarketPrice: string;
+  profitPecent: string;
 }
 
 type bankNamesType = {
@@ -63,24 +67,77 @@ const Record: FC<RecordProps> = ({
   methodTo,
   priceFrom,
   priceTo,
-  profit,
+  sellMarketPrice,
+  profitPecent,
 }) => {
+  const dispatch = useAppDispatch();
+  const { budget } = useAppSelector((state) => state.budgetReducer);
+
+  const [operationsStructure, setOperationsStructure] = useState<any>({
+    buyCoins: 0,
+    sellCoins: 0,
+    profit: 0,
+  });
+
+  useEffect(() => {
+    const buyCoins = budget / Number(priceFrom);
+    console.log(buyCoins);
+
+    if (coinFrom != coinTo) {
+      const sellCoins = buyCoins / Number(sellMarketPrice);
+      const profit = sellCoins * Number(priceTo) - budget;
+
+      setOperationsStructure({
+        buyCoins: buyCoins.toFixed(5),
+        profit: profit.toFixed(0),
+        sellCoins: sellCoins.toFixed(5),
+        sellPrice: priceTo,
+        bankFrom: bankNames[methodFrom],
+        bankTo: bankNames[methodTo],
+        coinFrom,
+        coinTo,
+        profitPecent,
+      });
+    } else {
+      const profit = buyCoins * Number(priceTo) - budget;
+
+      setOperationsStructure({
+        buyCoins: buyCoins.toFixed(5),
+        profit: profit.toFixed(0),
+        sellCoins: 0,
+        sellPrice: priceTo,
+        bankFrom: bankNames[methodFrom],
+        bankTo: bankNames[methodTo],
+        coinFrom,
+        coinTo,
+        profitPecent,
+      });
+    }
+  }, []);
+
+  const detailsHandler = () => {
+    dispatch(setActiveCase(operationsStructure));
+    dispatch(goToPage("Details"));
+  };
+
   return (
-    <tr className={+profit < 3 ? "record" : "record record-black"}>
-      <td className="align-left first-column">{bankNames[methodFrom]}</td>
-      <td className="coin">{coinIcons[coinFrom]}</td>
-      <td className="align-left">{priceFrom}</td>
-      <td className="coin">{coinFrom !== coinTo ? coinIcons[coinTo] : ""}</td>
-      <td className="align-left">{bankNames[methodTo]}</td>
-      <td className="align-left">{priceTo}</td>
-      <td
-        className={
-          +profit < 3
-            ? "last-column align-right orange"
-            : "last-column align-right green"
-        }
-      >
-        {profit}%
+    <tr className="record">
+      <td className="first-column">
+        <p className="bankname">{bankNames[methodFrom]}</p>
+        <p className="coin">{coinFrom}</p>
+      </td>
+      <td>
+        <p className="coin">{coinTo}</p>
+        <p className="bankname">{bankNames[methodTo]}</p>
+      </td>
+      <td className="last-column">
+        <div>
+          <p>профит</p>
+          <p className="green">{operationsStructure.profit} ₽</p>
+        </div>
+        <button className="open-case-btn" onClick={detailsHandler}>
+          <ArrowRightYellow />
+        </button>
       </td>
     </tr>
   );

@@ -4,14 +4,21 @@ import { Outlet } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
 import Table from "../../components/Table/Table";
+import CoinFilter from "../../components/CoinFilter/CoinFilter";
+import Budget from "../Budget/Budget";
+import { useAppSelector } from "../../hooks/redux";
+import DetailsHeader from "../../components/DetailsHeader/DetailsHeader";
+import Details from "../../components/Details/Details";
 
 const BinanceLayout: FC = () => {
+  const { page } = useAppSelector((state) => state.budgetReducer);
+
   const [cases, setCases] = useState<any[]>([]);
 
   useEffect(() => {
     document.title = "Арбитраж";
 
-    const socket = io("https://mockupdealer.ru");
+    const socket = io("http://localhost:5000");
 
     socket.on("cases", (data) => {
       console.log(data);
@@ -23,14 +30,40 @@ const BinanceLayout: FC = () => {
     });
   }, []);
 
-  return (
-    <div>
-      <Header cases={cases} />
-      <Table cases={cases} />
+  switch (page) {
+    case "Budget":
+      return (
+        <>
+          <Budget />
+        </>
+      );
+    case "List":
+      return (
+        <>
+          <Header cases={cases} />
+          <CoinFilter />
 
-      <Outlet />
-    </div>
-  );
+          <Table cases={cases} />
+
+          <Outlet />
+        </>
+      );
+    case "Details":
+      return (
+        <>
+          <Header cases={cases} />
+
+          <DetailsHeader />
+
+          <Details />
+
+          <Outlet />
+        </>
+      );
+
+    default:
+      return <></>;
+  }
 };
 
 export default BinanceLayout;

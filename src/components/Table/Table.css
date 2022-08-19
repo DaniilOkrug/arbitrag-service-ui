@@ -1,5 +1,5 @@
 .table-container {
-  min-height: auto;
+  min-height: 100vh;
 }
 
 .table-cases_header .first-header-column {
@@ -20,6 +20,8 @@
 
   width: 100%;
   max-width: 100%;
+
+  border-collapse: collapse;
 }
 
 .table-cases td,
@@ -51,4 +53,9 @@ th {
 
 .table-cases_header th {
   height: 22px;
+}
+
+.table-container {
+  padding: 12px;
+  background: #0E090A
 }

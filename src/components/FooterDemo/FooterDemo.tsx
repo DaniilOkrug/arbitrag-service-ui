@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 
-import CountrySelector from "../CountrySelector/CountrySelector";
 import FilterButton from "../FilterButton/FilterButton";
+import BudgetContainer from "../Footer/components/BudgetContainer/BudgetContainer";
 import DemoModal from "../Modals/Demo/DemoModal";
-import FilterModal from "../Modals/Filter/FilterModal";
+import ReturnButton from "../ReturnButton/ReturnButton";
 
 import "./FooterDemo.css";
 
@@ -12,9 +12,11 @@ const FooterDemo = () => {
 
   return (
     <div className="footer">
-      <CountrySelector />
+      <ReturnButton />
 
       <FilterButton onClick={() => setShow(true)} />
+
+      <BudgetContainer />
 
       <DemoModal show={show} onClose={() => setShow(false)} />
     </div>

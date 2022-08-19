@@ -1,0 +1,75 @@
+.details-wrapper {
+  min-width: 100%;
+  min-height: 100vh;
+
+  background: #09000c;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 12px;
+
+  font-family: "TT Norms-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
+  letter-spacing: -0.04em;
+}
+
+.details-wrapper .details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  height: 64px;
+  margin-bottom: 12px;
+
+  background: linear-gradient(
+    300.29deg,
+    #1c1c1c 37.17%,
+    rgba(28, 28, 28, 0) 160.33%
+  );
+  border-radius: 5px;
+}
+
+.details-wrapper .details-container .details-item:not(.first) {
+  width: 100%;
+}
+
+.details-wrapper .details-container .details-item.first {
+  font-family: "Ubuntu-Mono-Bold";
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.details-wrapper .details-container .details-item:not(.last) {
+  border-right: 1px solid black;
+}
+
+.details-wrapper .details-container .details-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: left;
+
+  padding: 14px;
+}
+
+.details-wrapper .details-container .details-item .yellow {
+  color: #ffe55c;
+}
+
+.details-wrapper .details-container .details-item .sub {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.details-wrapper .details-container .details-item .blue {
+  color: #19fff1;
+}
+
+.details-wrapper .details-container .details-item .green {
+  color: #3dff96;
+  margin: 0;
+}

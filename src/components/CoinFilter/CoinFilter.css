@@ -1,0 +1,24 @@
+.coin-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  font-family: "TT Norms-Regular";
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  
+
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.coin-filter-item {
+  padding: 12px 0;
+  width: 100%;
+}
+
+.coin-filter-item.active {
+  background-color: #ffe55c;
+  color: black;
+}
