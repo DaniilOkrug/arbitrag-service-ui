@@ -22,7 +22,7 @@ const initialState: IState = {
     coinTo: "",
     profitPecent: "",
   },
-  coinFilter: "all",
+  coinFilter: "All",
 };
 
 export const budgetSlice = createSlice({
