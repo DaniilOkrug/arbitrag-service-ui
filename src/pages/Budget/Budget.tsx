@@ -10,7 +10,7 @@ import "./Budget.css";
 const Budget = () => {
   const dispatch = useAppDispatch();
 
-  const [amount, setAmount] = useState<string>("0");
+  const [amount, setAmount] = useState<string>("10000");
 
   const continueHandler = useCallback(() => {
     console.log(Number(amount));
@@ -30,7 +30,7 @@ const Budget = () => {
       </div>
 
       <div className="budget-form">
-        <p>{"Старт>овый"}</p>
+        <p>Стартовый</p>
         <p>бюджет</p>
 
         <div className="input-container">
