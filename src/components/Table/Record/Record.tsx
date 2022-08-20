@@ -84,7 +84,10 @@ const Record: FC<RecordProps> = ({
     console.log(buyCoins);
 
     if (coinFrom != coinTo) {
-      const sellCoins = buyCoins / Number(sellMarketPrice);
+      const sellCoins =
+        (coinFrom === "BNB" && (coinTo === "ETH" || coinTo === 'BTC')) || (coinFrom === 'ETH' && coinTo === 'BTC')
+          ? buyCoins * Number(sellMarketPrice)
+          : buyCoins / Number(sellMarketPrice);
       const profit = sellCoins * Number(priceTo) - budget;
 
       setOperationsStructure({
@@ -119,6 +122,10 @@ const Record: FC<RecordProps> = ({
     dispatch(setActiveCase(operationsStructure));
     dispatch(goToPage("Details"));
   };
+
+  if (Number(operationsStructure.profit) < 0) {
+    return <></>;
+  }
 
   return (
     <tr className="record">

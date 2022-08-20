@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 
 import MoneyIcon from "../../components/Icons/MoneyIcon";
 import RubleIcon from "../../components/Icons/RubleIcon";
+import Spacer from "../../components/Spacer/Spacer";
 import { useAppDispatch } from "../../hooks/redux";
 import { setBudget } from "../../store/reducers/BudgetSlice";
 
@@ -14,7 +15,7 @@ const Budget = () => {
 
   const continueHandler = useCallback(() => {
     console.log(Number(amount));
-    
+
     if (!isNaN(Number(amount)) && Number(amount) > 0) {
       dispatch(setBudget(Number(amount)));
     }
@@ -47,8 +48,11 @@ const Budget = () => {
         </div>
 
         <div className="button-container">
-          <button className="continue-btn" onClick={continueHandler}>Продолжить</button>
+          <button className="continue-btn" onClick={continueHandler}>
+            Продолжить
+          </button>
         </div>
+        <Spacer></Spacer>
       </div>
     </div>
   );
