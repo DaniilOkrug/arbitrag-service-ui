@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { createRef, FC, useEffect, useState } from "react";
 import "./Record.css";
 
 import BnbIcon from "../../Icons/BnbIcon";
@@ -85,7 +85,8 @@ const Record: FC<RecordProps> = ({
 
     if (coinFrom != coinTo) {
       const sellCoins =
-        (coinFrom === "BNB" && (coinTo === "ETH" || coinTo === 'BTC')) || (coinFrom === 'ETH' && coinTo === 'BTC')
+        (coinFrom === "BNB" && (coinTo === "ETH" || coinTo === "BTC")) ||
+        (coinFrom === "ETH" && coinTo === "BTC")
           ? buyCoins * Number(sellMarketPrice)
           : buyCoins / Number(sellMarketPrice);
       const profit = sellCoins * Number(priceTo) - budget;

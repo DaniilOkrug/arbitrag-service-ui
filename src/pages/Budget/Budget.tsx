@@ -1,4 +1,10 @@
-import React, { useCallback, useState } from "react";
+import React, {
+  createRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import MoneyIcon from "../../components/Icons/MoneyIcon";
 import RubleIcon from "../../components/Icons/RubleIcon";
@@ -12,6 +18,8 @@ const Budget = () => {
   const dispatch = useAppDispatch();
 
   const [amount, setAmount] = useState<string>("10000");
+  const budgetFieldRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const continueHandler = useCallback(() => {
     console.log(Number(amount));
@@ -20,6 +28,26 @@ const Budget = () => {
       dispatch(setBudget(Number(amount)));
     }
   }, [amount]);
+
+  const [windowDimenion, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  });
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", detectSize);
+
+    return () => {
+      window.removeEventListener("resize", detectSize);
+    };
+  }, [windowDimenion]);
 
   return (
     <div className="budget-container">
@@ -30,7 +58,7 @@ const Budget = () => {
         <p className="title">BINANCE – P2P</p>
       </div>
 
-      <div className="budget-form">
+      <div ref={containerRef} className="budget-form">
         <p>Стартовый</p>
         <p>бюджет</p>
 
@@ -38,8 +66,20 @@ const Budget = () => {
           <MoneyIcon />
           <input
             type="text"
+            ref={budgetFieldRef}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
+            onFocus={() => {
+
+              if (containerRef.current) {
+                containerRef.current.style.height = `${windowDimenion.winHeight}px`;
+              }
+            }}
+            onBlur={() => {
+              if (containerRef.current) {
+                containerRef.current.style.height = `262px`;
+              }
+            }}
           />
 
           <div className="ruble-container">
