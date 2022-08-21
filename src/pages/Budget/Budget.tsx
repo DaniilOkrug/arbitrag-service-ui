@@ -69,17 +69,17 @@ const Budget = () => {
             ref={budgetFieldRef}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            onFocus={() => {
+            // onFocus={() => {
 
-              if (containerRef.current) {
-                containerRef.current.style.height = `${262 * 2}px`;
-              }
-            }}
-            onBlur={() => {
-              if (containerRef.current) {
-                containerRef.current.style.height = `262px`;
-              }
-            }}
+            //   if (containerRef.current) {
+            //     containerRef.current.style.height = `${262 * 2}px`;
+            //   }
+            // }}
+            // onBlur={() => {
+            //   if (containerRef.current) {
+            //     containerRef.current.style.height = `262px`;
+            //   }
+            // }}
           />
 
           <div className="ruble-container">
