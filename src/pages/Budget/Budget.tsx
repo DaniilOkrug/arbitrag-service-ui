@@ -72,7 +72,7 @@ const Budget = () => {
             onFocus={() => {
 
               if (containerRef.current) {
-                containerRef.current.style.height = `${windowDimenion.winHeight}px`;
+                containerRef.current.style.height = `${262 * 2}px`;
               }
             }}
             onBlur={() => {
