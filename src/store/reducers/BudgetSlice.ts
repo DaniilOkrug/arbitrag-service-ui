@@ -6,6 +6,7 @@ interface IState {
   page: string;
   activeCase: any;
   coinFilter: string;
+  hideFilter: boolean;
 }
 
 const initialState: IState = {
@@ -23,6 +24,7 @@ const initialState: IState = {
     profitPecent: "",
   },
   coinFilter: "All",
+  hideFilter: false,
 };
 
 export const budgetSlice = createSlice({
@@ -46,10 +48,19 @@ export const budgetSlice = createSlice({
     setCoinFilter(state, action: PayloadAction<string>) {
       state.coinFilter = action.payload;
     },
+
+    setHideFilter(state, action: PayloadAction<boolean>) {
+      state.hideFilter = action.payload;
+    },
   },
 });
 
-export const { setBudget, goToPage, setActiveCase, setCoinFilter } =
-  budgetSlice.actions;
+export const {
+  setBudget,
+  goToPage,
+  setActiveCase,
+  setCoinFilter,
+  setHideFilter,
+} = budgetSlice.actions;
 
 export default budgetSlice.reducer;

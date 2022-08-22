@@ -8,7 +8,11 @@ import EthIcon from "../../Icons/EthIcon";
 import UsdtIcon from "../../Icons/UsdtIcon";
 import ArrowRightYellow from "../../Icons/ArrowRightYellow";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { goToPage, setActiveCase } from "../../../store/reducers/BudgetSlice";
+import {
+  goToPage,
+  setActiveCase,
+  setHideFilter,
+} from "../../../store/reducers/BudgetSlice";
 
 interface RecordProps {
   methodFrom: string;
@@ -71,7 +75,7 @@ const Record: FC<RecordProps> = ({
   profitPecent,
 }) => {
   const dispatch = useAppDispatch();
-  const { budget } = useAppSelector((state) => state.budgetReducer);
+  const { budget, hideFilter } = useAppSelector((state) => state.budgetReducer);
 
   const [operationsStructure, setOperationsStructure] = useState<any>({
     buyCoins: 0,
@@ -80,8 +84,9 @@ const Record: FC<RecordProps> = ({
   });
 
   useEffect(() => {
+    dispatch(setHideFilter(true));
+
     const buyCoins = budget / Number(priceFrom);
-    console.log(buyCoins);
 
     if (coinFrom != coinTo) {
       const sellCoins =
@@ -117,6 +122,10 @@ const Record: FC<RecordProps> = ({
         profitPecent,
       });
     }
+
+    return () => {
+      dispatch(setHideFilter(false));
+    };
   }, []);
 
   const detailsHandler = () => {

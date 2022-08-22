@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAppSelector } from "../../hooks/redux";
 
 import FilterButton from "../FilterButton/FilterButton";
 import BudgetContainer from "../Footer/components/BudgetContainer/BudgetContainer";
@@ -8,13 +9,15 @@ import ReturnButton from "../ReturnButton/ReturnButton";
 import "./FooterDemo.css";
 
 const FooterDemo = () => {
+  const { hideFilter } = useAppSelector((state) => state.budgetReducer);
+
   const [show, setShow] = useState<boolean>(false);
 
   return (
     <div className="footer">
       <ReturnButton />
 
-      <FilterButton onClick={() => setShow(true)} />
+      {hideFilter && <FilterButton onClick={() => setShow(true)} />}
 
       <BudgetContainer />
 
