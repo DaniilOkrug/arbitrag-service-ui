@@ -17,7 +17,7 @@ const FooterDemo = () => {
     <div className="footer">
       <ReturnButton />
 
-      {hideFilter && <FilterButton onClick={() => setShow(true)} />}
+      {!hideFilter && <FilterButton onClick={() => setShow(true)} />}
 
       <BudgetContainer />
 

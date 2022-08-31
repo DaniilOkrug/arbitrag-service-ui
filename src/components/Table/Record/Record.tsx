@@ -75,7 +75,7 @@ const Record: FC<RecordProps> = ({
   profitPecent,
 }) => {
   const dispatch = useAppDispatch();
-  const { budget, hideFilter } = useAppSelector((state) => state.budgetReducer);
+  const { budget } = useAppSelector((state) => state.budgetReducer);
 
   const [operationsStructure, setOperationsStructure] = useState<any>({
     buyCoins: 0,
@@ -84,7 +84,8 @@ const Record: FC<RecordProps> = ({
   });
 
   useEffect(() => {
-    dispatch(setHideFilter(true));
+    // dispatch(setHideFilter(true));
+    // console.log('hiding');
 
     const buyCoins = budget / Number(priceFrom);
 
@@ -123,9 +124,9 @@ const Record: FC<RecordProps> = ({
       });
     }
 
-    return () => {
-      dispatch(setHideFilter(false));
-    };
+    // return () => {
+    //   dispatch(setHideFilter(false));
+    // };
   }, []);
 
   const detailsHandler = () => {

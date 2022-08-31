@@ -1,10 +1,22 @@
-import React from "react";
-import { useAppSelector } from "../../hooks/redux";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { setHideFilter } from "../../store/reducers/BudgetSlice";
 
 import "./Details.css";
 
 const Details = () => {
+  const dispatch = useAppDispatch();
   const { activeCase } = useAppSelector((state) => state.budgetReducer);
+
+  useEffect(() => {
+    dispatch(setHideFilter(true));
+    console.log('hiding');
+
+
+    return () => {
+      dispatch(setHideFilter(false));
+    }
+  }, []);
 
   return (
     <div className="details-wrapper">
