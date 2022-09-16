@@ -22,9 +22,9 @@ type bankNamesType = {
 };
 
 const bankNames: bankNamesType = {
-  Тиньков: "Tinkoff",
+  Тиньков: "TinkoffNew",
   РосБанк: "RosBank",
-  Райф: "RaiffeisenBankRussia",
+  Райф: "RaiffeisenBank",
   Киви: "QIWI",
   Юмани: "YandexMoney",
   Почта: "PostBankRussia",

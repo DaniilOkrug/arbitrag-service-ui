@@ -30,9 +30,9 @@ type bankNamesType = {
 };
 
 const bankNames: bankNamesType = {
-  Tinkoff: "Тиньков",
+  TinkoffNew: "Тиньков",
   RosBank: "Росбанк",
-  RaiffeisenBankRussia: "Райф",
+  RaiffeisenBank: "Райф",
   QIWI: "Киви",
   YandexMoney: "Юмани",
   RUBfiatbalance: "Бинанс",
