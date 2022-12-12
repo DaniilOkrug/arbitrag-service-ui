@@ -18,7 +18,7 @@ const BinanceLayout: FC = () => {
   useEffect(() => {
     document.title = "Арбитраж";
 
-    const socket = io("https://mockupdealer.ru");
+    const socket = io("https://mockupdealer.store");
 
     socket.on("cases", (data) => {
       console.log(data);
